@@ -22,16 +22,36 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   // create a new tag
   Tag.create({
-    
+
   })
 });
 
 router.put('/:id', (req, res) => {
   // update a tag's name by its `id` value
+  Tag.update (
+    {
+      product_id: req.body.tag_id,
+    },
+    {
+      where: {
+        tag_id: req.params.category_id,
+      }
+    }
+  )
+  .then((updatedTag) => {
+    res.json(updatedTag);
+  })
+  .catch((err) => res.json(err));
 });
 
 router.delete('/:id', (req, res) => {
   // delete on tag by its `id` value
+  Tag.destroy({
+    where: {
+tag_id: req.params.tag_id,
+    },
+  })
+  .catch((err) => res.json(err));
 });
 
 module.exports = router;
