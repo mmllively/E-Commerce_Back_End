@@ -22,11 +22,9 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   // create a new category
   Category.create({
-    shirts: req.body.shirts,
-    shorts: req.body.shorts,
-    music: req.body.music,
-    hats: req.body.hats,
-    shoes: req.body.shoes,
+    category_id: req.body.category_id,
+    category_name: req.body.category_name,
+ 
   })
   .then((newCategory) =>{
     res.json(newCategory);
@@ -41,11 +39,7 @@ router.put('/:id', (req, res) => {
   Category.update(
     {
       category_id: req.body.category_id,
-      shirts: req.body.shirts,
-      shorts: req.body.shorts,
-      music: req.body.music,
-      hats: req.body.hats,
-      shoes: req.body.shoes,
+ category_name: req.body.category_name
 
     },
     {
