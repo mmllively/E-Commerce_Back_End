@@ -21,7 +21,10 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   // create a new tag
-  Tag.create({
+  //ask question about this part
+  Tag.create(req.body)
+  .then((product) => {
+
 
   })
 });
@@ -51,7 +54,7 @@ router.delete('/:id', (req, res) => {
 tag_id: req.params.tag_id,
     },
   })
-  .catch((err) => res.json(err));
+  .catch((err) => res.json(err))
 });
 
 module.exports = router;
