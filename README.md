@@ -24,4 +24,4 @@ express, dotenv, node.js, sequelize & mysql2.
 UCF TA's and fellow classmates.
 
 ## Questions - Link to Instructional Video
-https://app.castify.com/view/57ed2567-d6ea-404e-b20f-142f3a68fa9a
+https://app.castify.com/view/dea84914-0ecb-4464-833e-67588989c15b
